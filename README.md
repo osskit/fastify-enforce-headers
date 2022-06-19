@@ -16,14 +16,16 @@ yarn add @osskit/fastify-enforce-headers
 ### Simple
 ```
 import fastify from 'fastify';
-await fastify.register(import('@osskit/fastify-enforce-headers'));
+import { enforceHeaders } from '@osskit/fastify-enforce-headers';
+
+await fastify.register(enforceHeaders);
 ```
 
 ### Extra headers
 
 ```
 import fastify from 'fastify';
-import enforceHeaders, {defaultHeaders} from '@osskit/fastify-enforce-headers';
+import { enforceHeaders, defaultHeaders } from '@osskit/fastify-enforce-headers';
 
 await fastify.register(enforceHeaders, {headers: [...defaultHeaders, 'x-custom-header']});
 ```
