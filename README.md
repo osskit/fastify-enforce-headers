@@ -15,19 +15,17 @@ yarn add @osskit/fastify-enforce-headers
 
 ### Simple
 ```
-import Fastify from 'fastify';
-import { enforceHeaders } from '@osskit/fastify-enforce-headers'
-
-await enforceHeaders(fastify)();
+import fastify from 'fastify';
+await fastify.register(import('@osskit/fastify-enforce-headers'));
 ```
 
 ### Extra headers
 
 ```
-import Fastify from 'fastify';
-import { enforceHeaders } from '@osskit/fastify-enforce-headers'
+import fastify from 'fastify';
+import enforceHeaders, {defaultHeaders} from '@osskit/fastify-enforce-headers';
 
-await enforceHeaders(fastify)({ headers: ['x-custom-header'] });
+await fastify.register(enforceHeaders, {headers: [...defaultHeaders, 'x-custom-header']});
 ```
 
 ## API
@@ -41,6 +39,6 @@ The headers you want to enforce on the request
 
 Throws a `400 - missing ${header}` error upon missing required header
 
-### requiredHeaders
+### defaultHeaders
 
 Type: `string[]` by default `['x-api-client', 'x-api-client-version']`
