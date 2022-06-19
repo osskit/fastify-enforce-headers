@@ -8,7 +8,7 @@ interface FastifyEnforceHeadersOptions {
 
 export const defaultHeaders = ['x-api-client', 'x-api-client-version'] as const;
 
-const enforceHeadersPlugin: FastifyPluginAsync = async (
+const enforceHeadersPlugin: FastifyPluginAsync<FastifyEnforceHeadersOptions> = async (
   fastify: FastifyInstance,
   { headers = defaultHeaders }: FastifyEnforceHeadersOptions = {},
 ): Promise<void> => {
