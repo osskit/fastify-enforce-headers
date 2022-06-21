@@ -1,11 +1,12 @@
 import Fastify from 'fastify';
-import { enforceHeaders } from '../src';
+import { enforceHeaders } from '../src/index.js';
 
 describe('main', () => {
   it('should enforce missing default headers', async () => {
     const fastify = Fastify();
 
-    fastify.register(enforceHeaders);
+    await fastify.register(enforceHeaders);
+
     fastify.get('/', async () => ({
       bla: 'hey',
     }));
@@ -22,7 +23,7 @@ describe('main', () => {
       bla: 'hey',
     }));
 
-    fastify.register(enforceHeaders);
+    await fastify.register(enforceHeaders);
 
     const res = await fastify.inject({ method: 'GET', path: '/', headers: { 'x-api-client': 'bla', 'x-api-client-version': '1.0' } });
 
@@ -36,7 +37,7 @@ describe('main', () => {
       bla: 'hey',
     }));
 
-    fastify.register(enforceHeaders, { headers: ['x-custom-header'] });
+    await fastify.register(enforceHeaders, { headers: ['x-custom-header'] });
 
     const res = await fastify.inject({ method: 'GET', path: '/', headers: { 'x-api-client': 'bla', 'x-api-client-version': '1.0' } });
 
@@ -50,7 +51,7 @@ describe('main', () => {
       bla: 'hey',
     }));
 
-    fastify.register(enforceHeaders, { headers: ['x-custom-header'] });
+    await fastify.register(enforceHeaders, { headers: ['x-custom-header'] });
 
     const res = await fastify.inject({ method: 'GET', path: '/', headers: { 'x-custom-header': 'bla' } });
 
