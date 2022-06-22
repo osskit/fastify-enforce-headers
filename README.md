@@ -1,7 +1,8 @@
-<div align="center">
+<p align="center">
+<img width="250" height="250" src="https://user-images.githubusercontent.com/15312980/175080445-1fb834d4-7321-424f-bfb0-0b3f4f81dc91.svg" />
+</p>
 
 # fastify-enforce-headers
-
 Enforce headers against http calls to your fastify API
   
 </div>
@@ -27,7 +28,7 @@ await fastify.register(enforceHeaders);
 import fastify from 'fastify';
 import { enforceHeaders, defaultHeaders } from '@osskit/fastify-enforce-headers';
 
-await fastify.register(enforceHeaders, {headers: [...defaultHeaders, 'x-custom-header']});
+await fastify.register(enforceHeaders, { headers: [...defaultHeaders, 'x-custom-header'] });
 ```
 
 ## API
