@@ -1,4 +1,5 @@
 import Fastify from 'fastify';
+import { describe, it, expect } from 'vitest';
 import { enforceHeaders } from '../src/index.js';
 
 describe('main', () => {

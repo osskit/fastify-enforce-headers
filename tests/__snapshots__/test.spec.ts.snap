@@ -1,35 +1,35 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`main should allow custom headers 1`] = `200`;
+exports[`main > should allow custom headers 1`] = `200`;
 
-exports[`main should allow custom headers 2`] = `
-Object {
+exports[`main > should allow custom headers 2`] = `
+{
   "bla": "hey",
 }
 `;
 
-exports[`main should allow default headers 1`] = `200`;
+exports[`main > should allow default headers 1`] = `200`;
 
-exports[`main should allow default headers 2`] = `
-Object {
+exports[`main > should allow default headers 2`] = `
+{
   "bla": "hey",
 }
 `;
 
-exports[`main should enforce missing custom headers 1`] = `400`;
+exports[`main > should enforce missing custom headers 1`] = `400`;
 
-exports[`main should enforce missing custom headers 2`] = `
-Object {
+exports[`main > should enforce missing custom headers 2`] = `
+{
   "error": "Bad Request",
   "message": "Missing required headers in request",
   "statusCode": 400,
 }
 `;
 
-exports[`main should enforce missing default headers 1`] = `400`;
+exports[`main > should enforce missing default headers 1`] = `400`;
 
-exports[`main should enforce missing default headers 2`] = `
-Object {
+exports[`main > should enforce missing default headers 2`] = `
+{
   "error": "Bad Request",
   "message": "Missing required headers in request",
   "statusCode": 400,

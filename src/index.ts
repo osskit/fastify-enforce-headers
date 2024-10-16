@@ -21,4 +21,4 @@ const enforceHeadersPlugin: FastifyPluginAsync<FastifyEnforceHeadersOptions> = a
   });
 };
 
-export const enforceHeaders = fp(enforceHeadersPlugin, { name: '@osskit/fastify-enforce-headers', fastify: '4.x' });
+export const enforceHeaders = fp(enforceHeadersPlugin, { name: '@osskit/fastify-enforce-headers', fastify: '5.x' });
