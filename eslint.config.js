@@ -12,7 +12,6 @@ export default typescriptEslint.config(
       ...baseConfig.languageOptions,
       parserOptions: {
         ...baseConfig.languageOptions.parserOptions,
-        project: ['./tsconfig.eslint.json'],
       },
     },
   },
